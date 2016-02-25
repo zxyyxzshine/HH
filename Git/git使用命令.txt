@@ -1,0 +1,15 @@
+1.安装好git后，使用git config --global user.email "your email"和git config --global user.name "your name"设置邮箱和用户名。
+  之后使用ssh-keygen -t rsa -C "your email"生成ssh key。在C:\Users\Administrator\.ssh目录下找到id_rsa.pub文件，将其中的key
+  复制到服务端的ssh key中即可。
+  
+2.在服务端新建一个仓库，然后在本地磁盘中使用git clone+仓库地址。
+3.此时在本地新建一个文件夹或者文件使用下面的命令提交到远程服务端：
+	a.git add *			--*代表将所有文件添加，可以指定提交的文件
+	b.git commit -m "提交注释" 
+	c.git push -u origin master    --更新远程分支，master代表远程主干，可将master换为远程分支名
+
+	
+4.删除远程分支上的指定文件：
+	a.git rm -r --cached  "文件名"
+	b.git commit -m "提交注释"
+	c.git push -u origin master		--更新远程分支
